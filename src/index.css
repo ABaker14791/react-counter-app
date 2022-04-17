@@ -11,3 +11,23 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.todo-item {
+  margin: 0 4px;
+  padding: 12px 12px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.complete-btn {
+  background-color: rgb(88, 251, 164);
+}
+
+.trash-btn {
+  background-color: rgb(251, 88, 88);
+}
