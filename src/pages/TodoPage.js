@@ -2,7 +2,14 @@ import React from "react";
 import Form from "../components/Form";
 import TodoList from "../components/TodoList";
 
-const TodoPage = ({ inputText, setInputText, todos, setTodos }) => {
+const TodoPage = ({
+  inputText,
+  setInputText,
+  todos,
+  setTodos,
+  setStatus,
+  filteredTodos,
+}) => {
   return (
     <div className="bg-orange-400 h-screen">
       <header>
@@ -13,8 +20,13 @@ const TodoPage = ({ inputText, setInputText, todos, setTodos }) => {
         setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
+        setStatus={setStatus}
       />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList
+        todos={todos}
+        setTodos={setTodos}
+        filteredTodos={filteredTodos}
+      />
     </div>
   );
 };

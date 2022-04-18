@@ -2,11 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
     setInputText(e.target.value);
   };
+
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setTodos([
@@ -19,6 +19,11 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     ]);
     setInputText("");
   };
+
+  const statusHandler = (e) => {
+    setStatus(e.target.value);
+  };
+
   return (
     <form className="text-center w-full">
       <div className="container mx-auto flex text-center justify-center">
@@ -39,6 +44,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
         </button>
         <div className="select">
           <select
+            onChange={statusHandler}
             name="todos"
             id=""
             className="block
